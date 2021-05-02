@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -18,8 +20,8 @@
                 <a class="header__logo" href="#top-page">
                     <img src="images/logo.svg" alt="">
                 </a>
-                <nav class="header__menu">
-                    <ul class="header__list">
+                <nav class="header__menu fill">
+                    <ul class="header__list ">
                         <li class="header__item">
                             <a href="#" class="header__link">О нас</a>
                         </li>
@@ -45,8 +47,8 @@
     <section class="top-page">
         <div class="container">
             <div class="top-page__inner">
-                <div class="top-page__title">We From Future</div>
-                <button class="top-page__btn">Оставить заявку</button>
+                <div class="top-page__title">We <span class="txt-rotate" data-period="2000" data-rotate='[ "From Future", "Are Favorites", "Are The Best" ]'></span></div>
+                <a class="btn btn2"> <span class="btn-text"> Оставить заявку </span></a>
             </div>
         </div>
     </section>
@@ -54,7 +56,7 @@
         <div class="container-fluid">
             <div class="title portfolio__title">Наше портфолио — наша гордость <br> Оно лучше расскажет о нас и о нашем качестве</div>
             <div class="portfolio__block-items">
-                <div class="portfolio__block-item">
+                <div class="portfolio__block-item" data-aos="zoom-in">
                     <div class="portfolio__block-box">
                         <a href="#" class="portfolio__block-link">
                             <img src="images/portfoly-img.jpg" alt="" class="portdolio__block-img">
@@ -62,7 +64,7 @@
                     </div>
                     <div class="portfolio__block-title">AOBIO.KZ</div>
                 </div>
-                <div class="portfolio__block-item">
+                <div class="portfolio__block-item" data-aos="zoom-in">
                     <div class="portfolio__block-box">
                         <a href="#" class="portfolio__block-link">
                             <img src="images/portfoly-img.jpg" alt="" class="portdolio__block-img">
@@ -70,7 +72,7 @@
                     </div>
                     <div class="portfolio__block-title">AOBIO.KZ</div>
                 </div>
-                <div class="portfolio__block-item">
+                <div class="portfolio__block-item" data-aos="zoom-in">
                     <div class="portfolio__block-box">
                         <a href="#" class="portfolio__block-link">
                             <img src="images/portfoly-img.jpg" alt="" class="portdolio__block-img">
@@ -78,7 +80,7 @@
                     </div>
                     <div class="portfolio__block-title">AOBIO.KZ</div>
                 </div>
-                <div class="portfolio__block-item">
+                <div class="portfolio__block-item" data-aos="zoom-in">
                     <div class="portfolio__block-box">
                         <a href="#" class="portfolio__block-link">
                             <img src="images/portfoly-img-2.jpg" alt="" class="portdolio__block-img">
@@ -86,7 +88,7 @@
                     </div>
                     <div class="portfolio__block-title">ИП РК НОП</div>
                 </div>
-                <div class="portfolio__block-item">
+                <div class="portfolio__block-item" data-aos="zoom-in">
                     <div class="portfolio__block-box">
                         <a href="#" class="portfolio__block-link">
                             <img src="images/portfoly-img-2.jpg" alt="" class="portdolio__block-img">
@@ -94,7 +96,7 @@
                     </div>
                     <div class="portfolio__block-title">ИП РК НОП</div>
                 </div>
-                <div class="portfolio__block-item">
+                <div class="portfolio__block-item" data-aos="zoom-in">
                     <div class="portfolio__block-box">
                         <a href="#" class="portfolio__block-link">
                             <img src="images/portfoly-img-2.jpg" alt="" class="portdolio__block-img">
@@ -121,8 +123,8 @@
 
                 </div>
             </div>
-            <div class="services__icon-block">
-                <div class="services__icon-item">
+            <div class='services__icon-block'>
+                <div class="services__icon-item" data-aos="fade-up">
                     <div class="services__icon-images">
                         <img src="images/icon-1.svg" alt="" class="services__icon-img">
                     </div>
@@ -133,7 +135,7 @@
                         Мы создаем нативные и гибридные кроссплатформенные приложения для iOS и Android для вашего бизнеса.
                     </div>
                 </div>
-                <div class="services__icon-item">
+                <div class="services__icon-item" data-aos="fade-up">
                     <div class="services__icon-images">
                         <img src="images/icon-2.svg" alt="" class="services__icon-img">
                     </div>
@@ -146,7 +148,7 @@
 
                     </div>
                 </div>
-                <div class="services__icon-item">
+                <div class="services__icon-item" data-aos="fade-up">
                     <div class="services__icon-images">
                         <img src="images/icon-3.svg" alt="" class="services__icon-img">
                     </div>
@@ -157,7 +159,7 @@
                         Мы создаем качественный пользовательский интерфейс, используя UX исследования и грамотную проработку с клиентом
                     </div>
                 </div>
-                <div class="services__icon-item">
+                <div class="services__icon-item" data-aos="fade-up">
                     <div class="services__icon-images">
                         <img src="images/icon-4.svg" alt="" class="services__icon-img">
                     </div>
@@ -169,7 +171,7 @@
 
                     </div>
                 </div>
-                <div class="services__icon-item">
+                <div class="services__icon-item" data-aos="fade-up">
                     <div class="services__icon-images">
                         <img src="images/icon-5.svg" alt="" class="services__icon-img">
                     </div>
@@ -181,7 +183,7 @@
 
                     </div>
                 </div>
-                <div class="services__icon-item">
+                <div class="services__icon-item" data-aos="fade-up">
                     <div class="services__icon-images">
                         <img src="images/icon-6.svg" alt="" class="services__icon-img">
                     </div>
@@ -252,8 +254,8 @@
     </footer>
 
 
-
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.min.js"></script>
 </body>
 
