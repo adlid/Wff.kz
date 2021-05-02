@@ -10,6 +10,13 @@ a {
     color: black;
 }
 
+:active,
+ :hover,
+ :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
