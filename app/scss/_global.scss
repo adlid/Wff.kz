@@ -3,7 +3,7 @@ body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     //font-family: 'Rubik', sans-serif;
-    background: #f7f7f7;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -44,9 +44,216 @@ a {
 }
 
 .title {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 36px;
     line-height: 44px;
     text-align: center;
     margin-bottom: 135px;
+    color: #2E2E2E;
+}
+
+.text-medium {
+    text-align: center;
+    color: #989898;
+}
+
+.portfolio__tab--active {
+    transition: all 0.5s ease;
+    color: #2FAF68;
+    position: relative;
+    font-weight: 700;
+    &::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: #2FAF68;
+        left: 0;
+        bottom: -5px;
+    }
+}
+
+.percent__block__counter-active {
+    color: #4CAF50;
+    transition: all .5s ease;
+    &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: #447949;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.together_after-before {
+    position: relative;
+    width: 100%;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background-color: #D4D4D4;
+        left: 0;
+        bottom: 0;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background-color: #949494;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.bottom-line {
+    position: relative;
+    text-align: center;
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: #79F77E;
+        width: 100%;
+        height: 3px;
+        bottom: -4px;
+        right: 0;
+        left: 0;
+    }
+    &-strong {
+        &::after {
+            background-color: #447949 !important;
+        }
+    }
+    &-strong-2 {
+        &::after {
+            background-color: #447949 !important;
+        }
+    }
+}
+
+body._lock {
+    overflow: hidden;
+}
+
+body._pc .menu__list>li:hover .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+}
+
+body._touch .menu__list>li {
+    display: flex;
+    align-items: center;
+}
+
+body._touch .menu__link {
+    flex: 1 1 auto;
+}
+
+body._touch .menu__arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0px 0px 0px 5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #fafafa;
+    transition: transform 0.3s ease 0s;
+}
+
+body._touch .menu__list>li._active .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+}
+
+body._touch .menu__list>li ._active .menu__arrow {
+    transform: rotate(-180deg);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.popup-form {
+    max-width: 662px;
+    padding: 66px 60px;
+    background: #FFFFFF;
+    border-radius: 40px;
+    align-items: center;
+    &__title {
+        color: #000000;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+    &__text {
+        color: #C4C4C4;
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 400;
+        margin-bottom: 31px;
+    }
+    &__input {
+        width: 100%;
+        padding: 22px 69px;
+        border: none;
+        background: #F8FAF9;
+        margin-bottom: 40px;
+        &::placeholder {
+            color: #C4C4C4;
+            text-align: center;
+        }
+    }
+    &__btn {
+        background: #006CFF;
+        border-radius: 10px;
+        text-align: center;
+        width: 100%;
+        padding: 19px;
+        color: #FFFFFF;
+        border: none;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup_content {
+    border-radius: 40px;
+    /* display: none; */
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 40rem;
+    background-color: #ffffff;
+}
+
+.popup_close {
+    position: absolute;
+    top: -2.2rem;
+    right: -5rem;
+    font-size: 4rem;
+    color: #ffffff;
+    border: none;
+    background: transparent;
 }
