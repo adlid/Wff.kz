@@ -128,6 +128,9 @@
         margin-bottom: 105px;
         &:hover {
             cursor: pointer;
+            .portfolio__block-title {
+                font-weight: 600;
+            }
             .portfolio__block-title::after {
                 transition: all .5s ease;
                 background-color: #447949;
@@ -567,6 +570,9 @@
         padding-top: 6px;
         margin-bottom: 30px;
     }
+    &__social-link {
+        border: 50%;
+    }
     &__social-link+&__social-link {
         padding-left: 8px;
     }
@@ -613,7 +619,7 @@
         align-items: center;
         padding-bottom: 35px;
         padding-top: 35px;
-        margin-bottom: 70px;
+        margin-bottom: 20px;
     }
     &__block-text {
         width: 100%;
@@ -987,6 +993,7 @@ nav.fill ul li a:hover:after {
     transition: all .7s ease;
     border: solid;
     border-width: 5px;
+    background-color: white;
     border-color: #2ED73E;
     width: 110px;
     height: 110px;
@@ -1603,6 +1610,7 @@ body._touch .menu__list>.list__icon {
         max-width: 295px;
     }
     .active {
+        background-color: white;
         width: 52px;
         height: 52px;
         border-width: 2px;
