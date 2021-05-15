@@ -113,6 +113,80 @@ a {
     }
 }
 
+@keyframes shake {
+    0%,
+    50%,
+    100% {
+        transform: rotate(0deg);
+    }
+    10%,
+    30% {
+        transform: rotate(-10deg);
+        border-radius: 50%;
+        box-shadow: 0px 12px 23px 30px rgba(34, 48, 63, 0.74);
+    }
+    20%,
+    40% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes shake2 {
+    0%,
+    50%,
+    100% {
+        transform: rotate(0deg);
+    }
+    10%,
+    30% {
+        transform: rotate(-10deg);
+        border-radius: 50%;
+        box-shadow: 0px 3px 23px 15px rgba(242, 242, 242, 0.74);
+    }
+    20%,
+    40% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes phone {
+    0% {
+        stroke: #D3D3D3;
+    }
+    50% {
+        box-shadow: 0px 3px 23px 15px rgba(94, 231, 70, 0.31);
+    }
+    100% {
+        stroke: #2FAF68;
+    }
+}
+
+.header__svg>#fou {
+    animation: phone 1.5s ease-in-out;
+    animation-iteration-count: infinite;
+    //animation-direction: alternate-reverse;
+}
+
+.header__svg>#six {
+    animation: phone 1.5s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.header__svg>.second__line {
+    animation: phone 1.5s ease;
+    animation-iteration-count: infinite;
+    //animation-direction: alternate-reverse;
+}
+
+.footer__social-link:hover {
+    animation: shake 1.5s ease-in-out;
+}
+
+.portfolio__block-link-items :hover {
+    animation: shake2 1.5s ease-in-out;
+}
+
 .together_after-before-active {
     position: relative;
     width: 100%;
@@ -230,6 +304,7 @@ form {
         font-size: 30px;
         font-weight: 700;
         margin-bottom: 25px;
+        line-height: 42px;
     }
     &__text {
         color: #C4C4C4;
@@ -237,19 +312,22 @@ form {
         line-height: 21px;
         font-weight: 400;
         margin-bottom: 31px;
+        line-height: 21px;
     }
     &__input {
         width: 100%;
-        padding: 22px 69px;
+        padding: 22px;
         border: none;
         background: #F8FAF9;
         margin-bottom: 40px;
+        line-height: 29px;
         &::placeholder {
             color: #C4C4C4;
             text-align: center;
         }
     }
     &__btn {
+        cursor: pointer;
         background: #006CFF;
         border-radius: 10px;
         text-align: center;
@@ -257,6 +335,7 @@ form {
         padding: 19px;
         color: #FFFFFF;
         border: none;
+        margin-top: 5px;
     }
 }
 
