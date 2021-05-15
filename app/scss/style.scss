@@ -1648,6 +1648,9 @@ body._touch .menu__list>.list__icon {
 }
 
 @media(max-width: 425px) {
+    .footer__center {
+        margin-top: 186px;
+    }
     .popup-form {
         padding: 20px 26px;
     }
@@ -1663,7 +1666,6 @@ body._touch .menu__list>.list__icon {
         right: 1rem;
     }
     .popup-form {
-        padding: 40px 36px;
         &__title {
             font-size: 18px;
             margin-bottom: 10px;
