@@ -1123,6 +1123,23 @@ body._touch .menu__list>.list__icon {
 }
 
 @media(max-width: 768px) {
+    .popup_content {
+        width: 29rem;
+    }
+    .popup_close {
+        color: #2FAF68;
+        top: -0.2rem;
+        right: 1rem;
+    }
+    .popup-form {
+        padding: 46px 40px;
+        &__title {
+            font-size: 26px;
+        }
+        &__text {
+            font-size: 16px;
+        }
+    }
     .leave-request {
         display: none;
     }
@@ -1199,7 +1216,7 @@ body._touch .menu__list>.list__icon {
 @media (max-width: 767px) {
     .menu__icon {
         top: 0px;
-        z-index: 12;
+        z-index: 9;
         display: block;
         position: relative;
         width: 30px;
@@ -1309,6 +1326,23 @@ body._touch .menu__list>.list__icon {
 }
 
 @media(max-width: 530px) {
+    .popup_content {
+        width: 26rem;
+    }
+    .popup_close {
+        color: #2FAF68;
+        top: -0.2rem;
+        right: 1rem;
+    }
+    .popup-form {
+        padding: 40px 36px;
+        &__title {
+            font-size: 22px;
+        }
+        &__text {
+            font-size: 15px;
+        }
+    }
     .title {
         font-size: 18px;
     }
@@ -1439,5 +1473,34 @@ body._touch .menu__list>.list__icon {
 @media(max-width: 425px) {
     .services__content-title {
         font-size: 22px;
+    }
+    .popup_content {
+        width: 18rem;
+    }
+    .popup_close {
+        color: #2FAF68;
+        top: -0.2rem;
+        right: 1rem;
+    }
+    .popup-form {
+        padding: 40px 36px;
+        &__title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        &__text {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        &__input {
+            padding: 11px;
+            margin-bottom: 18px;
+            &::placeholder {
+                font-size: 15px;
+            }
+        }
+        &__btn {
+            padding: 11px;
+        }
     }
 }

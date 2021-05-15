@@ -197,7 +197,8 @@ $(window).on('scroll', function() {
 var timeout = 1,
     greenClass = $('.services__icon-images-1'),
     greenLineClass = $('.services__icon-title'),
-    greenQualityClass = $('.quality__icon-images');
+    greenQualityClass = $('.quality__icon-images'),
+    lineActive = $('.together_after-before');
 
 $(window).on('scroll', function() {
     var scrolltop = $(this).scrollTop(),
@@ -231,7 +232,30 @@ $(window).on('scroll', function() {
         }
     });
 });
-
+$(window).on('scroll', function() {
+    var scrolltop = $(this).scrollTop(),
+        wh = $(this).height();
+    greenQualityClass.each(function() {
+        var that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            setTimeout(() => {
+                greenQualityClass.addClass('active');
+            }, 5000);
+        }
+    });
+});
+$(window).on('scroll', function() {
+    var scrolltop = $(this).scrollTop(),
+        wh = $(this).height();
+    lineActive.each(function() {
+        var that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            setTimeout(() => {
+                lineActive.addClass('together_after-before-active');
+            }, 1000);
+        }
+    });
+});
 const isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -355,3 +379,80 @@ function showModalByTime(selector, time) {
 }
 bindModals('.leave-request__btn', '.popup', '.popup_close');
 bindModals('.btn', '.popup', '.popup_close');
+const checkNumInputs = (selector) => {
+    const numInput = document.querySelectorAll(selector);
+    numInput.forEach(item => {
+        item.addEventListener('click', () => {
+            item.value = item.value.replace(/\D/, '');
+        });
+    })
+}
+
+const forms = (state) => {
+
+    const form = document.querySelectorAll('form'),
+        input = document.querySelectorAll('input'),
+        phoneInputs = document.querySelectorAll('input[name="user_phone"]');
+    checkNumInputs('input[name="user_phone"]');
+    const message = {
+        loading: 'Loading',
+        success: 'Thank you, we will phone you later',
+        failtire: 'Oh sorry...'
+
+    };
+
+    const postDate = async(url, data) => {
+        document.querySelector('.status').textContent = message.loading;
+        let res = await fetch(url, {
+            method: "POST",
+            body: data
+        });
+
+        return await res.json();
+    };
+    const clearInputs = () => {
+        input.forEach(item => {
+            item.value = '';
+        });
+    }
+    form.forEach(item => {
+        item.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let statusMessage = document.createElement('div');
+
+            statusMessage.classList.add('status');
+            item.appendChild(statusMessage);
+
+            let formDate = new FormData(item);
+            if (item.getAttribute('data-calc') === "end") {
+                for (let key in state) {
+                    formDate.append(key, state[key]);
+                }
+            }
+            /*
+            const obj ={};
+            formDate.forEach((item,i)=>{
+                obj[i]=item;
+            });
+            const json = JSON.stringify(obj);*/
+            postDate('assets/server.php', formDate).then(data => data.text())
+                .then(res => {
+                    console.log(res);
+                    statusMessage.textContent = message.success;
+                })
+                .catch(() => {
+                    statusMessage.textContent = message.failtire;
+                })
+                .finally(() => {
+                    clearInputs();
+                    setTimeout(() => {
+                        statusMessage.remove();
+                    }, 5000);
+                })
+
+        });
+    })
+
+};
+forms();
