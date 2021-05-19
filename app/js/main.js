@@ -124,6 +124,7 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display
     const header = document.querySelector(headerSelector),
         tab = document.querySelectorAll(tabSelector),
         content = document.querySelectorAll(contentSelector);
+    for ()
 
     function hideTabContent() {
         content.forEach(item => {
@@ -399,7 +400,6 @@ const forms = (state) => {
         loading: 'Loading',
         success: 'Thank you, we will phone you later',
         failtire: 'Oh sorry...'
-
     };
 
     const postDate = async(url, data) => {
