@@ -1,11 +1,22 @@
+@import url("../fonts/stylesheet.css");
 html,
 body {
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    //font-family: 'Rubik', sans-serif;
+    font-family: 'SF Pro Display';
     scroll-behavior: smooth;
+    font-weight: 400;
 }
-
+body::-webkit-scrollbar{
+    width: 15px;
+}
+body::-webkit-scrollbar-track{
+    background: #ebeeeb;
+}
+body::-webkit-scrollbar-thumb{
+    background: #6db374;
+    border-radius: 6px;
+    border: 1px solid rgb(147, 199, 98);
+}
 a {
     color: black;
 }
@@ -113,23 +124,6 @@ a {
     }
 }
 
-@keyframes shake {
-    0%,
-    50%,
-    100% {
-        transform: rotate(0deg);
-    }
-    10%,
-    30% {
-        transform: rotate(-10deg);
-        border-radius: 50%;
-        box-shadow: 0px 12px 23px 30px rgba(34, 48, 63, 0.74);
-    }
-    20%,
-    40% {
-        transform: rotate(10deg);
-    }
-}
 
 @keyframes shake2 {
     0%,
@@ -183,10 +177,14 @@ a {
     animation: shake 1.5s ease-in-out;
 }
 
-.portfolio__block-link-items :hover {
-    animation: shake2 1.5s ease-in-out;
+.footer__social-list:hover .footer__social-link:not(:hover) {
+    filter: blur(2px) grayscale(1);
+    transition: all .5s ease;
 }
-
+.footer__social-link:hover{
+    transform: scale(1.1);
+    transition: all .5s ease;
+}
 .together_after-before-active {
     position: relative;
     width: 100%;
