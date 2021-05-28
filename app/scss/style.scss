@@ -145,6 +145,9 @@
         background: #FFFFFF;
         box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
+        &:hover {
+            transform: scale(1.1);
+        }
         &:before {
             content: '';
             background: linear-gradient( to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
@@ -156,7 +159,7 @@
             left: 0;
             z-index: 2;
             transition-property: top, opacity;
-            transition-duration: 2s;
+            transition-duration: 1s;
             &:hover {
                 transform: scale(1.1);
             }
@@ -184,8 +187,12 @@
                 position: relative;
                 top: 100px;
                 transition-property: top, opacity;
-                transition-duration: .5s;
-                transition-delay: 1s
+                transition-duration: .3s;
+                transition-delay: 0.2s;
+                width: 100%;
+            }
+            .portfolio__block-link-items{
+                width: 20%;
             }
             .portfolio__block-link {
                 display: flex;
@@ -193,6 +200,7 @@
                 line-height: 1;
                 font-weight: 600;
                 font-size: 18px;
+                width: 100%;
             }
             .portfolio__block-btn {
                 line-height: 1.2;
@@ -214,10 +222,10 @@
                 top: 0;
             }
             .portfolio__block-link {
-                transition-delay: 1.55s;
+                transition-delay: 1.25s;
             }
             .portfolio__block-btn {
-                transition-delay: 1.25s;
+                transition-delay: 1s;
             }
         }
     }
@@ -231,6 +239,10 @@
     }
     &__tab-item+&__tab-item {
         margin-left: 108px;
+    }
+    &__block-link-items{
+        width: 20px;
+        height: 20px;
     }
     &__block-link-items+&__block-link-items {
         margin-left: 12px;
@@ -1204,6 +1216,10 @@ body._touch .menu__list>.list__icon {
         padding: 0;
         margin: 0 35px 0 35px;
     }
+    .portfolio__block-item {
+        width: 360px;
+    
+    }
     .services__content-title {
         font-size: 40px;
         line-height: 46px;
@@ -1320,8 +1336,10 @@ body._touch .menu__list>.list__icon {
             font-size: 16px;
         }
         &__input {
+            font-weight: 400;
             &::placeholder {
                 font-size: 14px;
+                font-weight: 400;
             }
         }
         &__btn {
