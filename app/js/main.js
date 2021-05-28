@@ -8,8 +8,7 @@ AOS.init({
     disableMutationObserver: false, // disables automatic mutations' detections (advanced)
     debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-
+    
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
     offset: 120, // offset (in px) from the original trigger point
     delay: 150, // values from 0 to 3000, with step 50ms
@@ -120,12 +119,9 @@ window.onload = function() {
 };
 
 const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display = 'block') => {
-
     const header = document.querySelector(headerSelector),
         tab = document.querySelectorAll(tabSelector),
         content = document.querySelectorAll(contentSelector);
-  
-
     function hideTabContent() {
         content.forEach(item => {
             item.style.display = 'none';
@@ -160,103 +156,6 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display
 
 }
 tabs('.portfolio__tab', '.portfolio__tab-item', '.portfolio__block-content', 'portfolio__tab--active');
-var timeout = 1,
-    counters = $('.percent__block__counter-number'),
-    percent = $('.percent__block__counter');
-counters.each(function() {
-    var that = $(this),
-        num = that.html();
-    that.html(0);
-    that.attr('data-num', num);
-});
-$(window).on('scroll', function() {
-    var scrolltop = $(this).scrollTop(),
-        wh = $(this).height();
-    counters.each(function() {
-        var that = $(this);
-        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
-            percent.addClass('percent__block__counter-active');
-            that.attr('data-start', true);
-            var i = 1,
-                num = that.data('num'),
-                step = Math.round(2000 * timeout / num),
-                int = setInterval(function() {
-                    if (i <= num) {
-                        that.html(i);
-                    } else {
-                        clearInterval(int);
-                    }
-                    i++;
-                }, step);
-            console.log(num)
-            if (num == 0) {
-                percent.removeClass('percent__block__counter-active');
-            }
-        }
-    });
-});
-var timeout = 1,
-    greenClass = $('.services__icon-images-1'),
-    greenLineClass = $('.services__icon-title'),
-    greenQualityClass = $('.quality__icon-images'),
-    lineActive = $('.together_after-before');
-
-$(window).on('scroll', function() {
-    var scrolltop = $(this).scrollTop(),
-        wh = $(this).height();
-    greenClass.each(function() {
-        var that = $(this);
-        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
-            setTimeout(() => {
-                greenClass.addClass('active');
-            }, 5000);
-        }
-    });
-    greenLineClass.each(function() {
-        var that = $(this);
-        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
-            setTimeout(() => {
-                greenLineClass.addClass('bottom-line-strong-2');
-            }, 5000);
-        }
-    });
-});
-$(window).on('scroll', function() {
-    var scrolltop = $(this).scrollTop(),
-        wh = $(this).height();
-    greenQualityClass.each(function() {
-        var that = $(this);
-        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
-            setTimeout(() => {
-                greenQualityClass.addClass('active');
-            }, 5000);
-        }
-    });
-});
-$(window).on('scroll', function() {
-    var scrolltop = $(this).scrollTop(),
-        wh = $(this).height();
-    greenQualityClass.each(function() {
-        var that = $(this);
-        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
-            setTimeout(() => {
-                greenQualityClass.addClass('active');
-            }, 5000);
-        }
-    });
-});
-$(window).on('scroll', function() {
-    var scrolltop = $(this).scrollTop(),
-        wh = $(this).height();
-    lineActive.each(function() {
-        var that = $(this);
-        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
-            setTimeout(() => {
-                lineActive.addClass('together_after-before-active');
-            }, 1000);
-        }
-    });
-});
 const isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -457,3 +356,100 @@ const forms = (state) => {
 
 };
 forms();
+var timeout = 1,
+    counters = $('.percent__block__counter-number'),
+    percent = $('.percent__block__counter');
+counters.each(function() {
+    var that = $(this),
+        num = that.html();
+    that.html(0);
+    that.attr('data-num', num);
+});
+$(window).on('scroll', function() {
+    var scrolltop = $(this).scrollTop(),
+        wh = $(this).height();
+    counters.each(function() {
+        var that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            percent.addClass('percent__block__counter-active');
+            that.attr('data-start', true);
+            var i = 1,
+                num = that.data('num'),
+                step = Math.round(2000 * timeout / num),
+                int = setInterval(function() {
+                    if (i <= num) {
+                        that.html(i);
+                    } else {
+                        clearInterval(int);
+                    }
+                    i++;
+                }, step);
+            console.log(num)
+            if (num == 0) {
+                percent.removeClass('percent__block__counter-active');
+            }
+        }
+    });
+});
+let timeout = 1,
+    greenClass = $('.services__icon-images-1'),
+    greenLineClass = $('.services__icon-title'),
+    greenQualityClass = $('.quality__icon-images'),
+    lineActive = $('.together_after-before');
+
+$(window).on('scroll', function() {
+    let scrolltop = $(this).scrollTop(),
+        wh = $(this).height();
+    greenClass.each(function() {
+        let that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            setTimeout(() => {
+                greenClass.addClass('active');
+            }, 5000);
+        }
+    });
+    greenLineClass.each(function() {
+        let that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            setTimeout(() => {
+                greenLineClass.addClass('bottom-line-strong-2');
+            }, 5000);
+        }
+    });
+});
+$(window).on('scroll', function() {
+    let scrolltop = $(this).scrollTop(),
+        wh = $(this).height();
+    greenQualityClass.each(function() {
+        let that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            setTimeout(() => {
+                greenQualityClass.addClass('active');
+            }, 5000);
+        }
+    });
+});
+$(window).on('scroll', function() {
+    let scrolltop = $(this).scrollTop(),
+        wh = $(this).height();
+    greenQualityClass.each(function() {
+        let that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            setTimeout(() => {
+                greenQualityClass.addClass('active');
+            }, 5000);
+        }
+    });
+});
+$(window).on('scroll', function() {
+    let scrolltop = $(this).scrollTop(),
+        wh = $(this).height();
+    lineActive.each(function() {
+        let that = $(this);
+        if (!that.data('start') && scrolltop >= that.offset().top - wh) {
+            setTimeout(() => {
+                lineActive.addClass('together_after-before-active');
+            }, 1000);
+        }
+    });
+});
