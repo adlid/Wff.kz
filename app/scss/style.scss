@@ -52,8 +52,30 @@
         font-weight: 500;      
         font-size: 18px;
     }
+    &__item-svg{
+        &:active,
+        &:focus {
+          background: darken(#139675, 20%);
+        }
+      
+        &:hover .header__svg {
+          -webkit-animation: wiggle .05s alternate ease infinite;
+          animation: wiggle .05s alternate ease infinite;
+          
+
+    }
+}
 }
 
+  @keyframes bounceright {
+    from { transform: translateX(0); }
+    to   { transform: translateX(3px); }
+  }
+  
+  @keyframes wiggle {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(30deg); }
+  }
 //Section Top-page
 .top-page {
     background-image: url(../images/top-bg.png);
