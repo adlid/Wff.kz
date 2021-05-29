@@ -391,8 +391,7 @@ $(window).on('scroll', function() {
         }
     });
 });
-let timeout = 1,
-    greenClass = $('.services__icon-images-1'),
+let  greenClass = $('.services__icon-images-1'),
     greenLineClass = $('.services__icon-title'),
     greenQualityClass = $('.quality__icon-images'),
     lineActive = $('.together_after-before');
