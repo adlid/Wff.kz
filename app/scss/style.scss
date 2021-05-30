@@ -7,7 +7,7 @@
     --active:#fff;
     --active-border:#2ED73E;
     --main-bg:#ffffff;
-    
+    --service-after:url(../images/AfterBefore/services-before.svg);
     --text:#3D3D3D;
     --icon-text:#808A9D;
     --nav-text:#575757;
@@ -15,12 +15,15 @@
     --portfolio-text:#5F5F5F;
     --some-text:#989898;
     --top-page-bg:rgba(255, 255, 255, 0);
-    --toggle-bg: url('../images/moon.svg')
+    --toggle-bg: url('../images/moon.svg');
+    --percent-after:url(../images/AfterBefore//percent-polygon.svg);
     
 }
 :root[data-theme='dark']{
     --top-page-bg:rgba(0, 0, 0, 0.774);
    --nav-text:#f3f0f0;
+   --service-after:none;
+   --percent-after:none;
    --title-text: #d4d4d4;
    --main-bg:#222121;
    --text:#f3f0f0;
@@ -377,23 +380,27 @@ body{
             background-color: #C9C9C9;
         }
     }
-    &__title {
-        max-width: 665px;
-        margin: 0 auto 20px;
+    &__title-after{
         position: relative;
-        z-index: 5;
         &::after {
             content: '';
             position: absolute;
-            width: 44px;
-            height: 44px;
-            top: 0;
-            right: 52px;
+            width: 57px;
+    height: 57px;
+    top: -22px;
+    right: -27px;
             background-image: url(../images/AfterBefore/portfolio-after.svg);
             background-position: center;
             background-repeat: no-repeat;
             z-index: -1;
         }
+    }
+    &__title {
+        max-width: 665px;
+        margin: 0 auto 20px;
+        position: relative;
+        z-index: 5;
+       
         &::before {
             transform: rotate(-2deg);
             z-index: -1;
@@ -428,7 +435,7 @@ body{
         &::before {
             content: '';
             position: absolute;
-            background-image: url(../images/AfterBefore/services-before.svg);
+            background-image: var(--service-after);
             background-position: center;
             background-repeat: no-repeat;
             width: 80px;
@@ -703,7 +710,7 @@ body{
             top: -4px;
             width: 46px;
             height: 46px;
-            background-image: url(../images/AfterBefore//percent-polygon.svg);
+            background-image: var(--percent-after);
             z-index: -1;
             background-repeat: no-repeat;
             background-position: center;
@@ -734,14 +741,7 @@ body{
         padding-top: 35px;
         margin-bottom: 20px;
     }
-    &__block-text {
-        width: 100%;
-        font-weight: 500;
-        font-size: 36px;
-        text-align: center;
-        margin: 0 auto;
-        color:var(--some-text);
-        padding-bottom: 50px;
+    &__block-text-before{
         position: relative;
         &::before {
             content: '';
@@ -751,9 +751,20 @@ body{
             background-position: center;
             width: 55px;
             height: 55px;
-            left: 0;
+            left:-26px;
             top: -14px;
         }
+    }
+    &__block-text {
+        width: 100%;
+        font-weight: 500;
+        font-size: 36px;
+        text-align: center;
+        margin: 0 auto;
+        color:var(--some-text);
+        padding-bottom: 50px;
+        position: relative;
+      
     }
     &__block__counter {
         //color: #4CAF50;
@@ -793,21 +804,24 @@ body{
 //Section quality
 .quality {
     &__title {
-        margin-bottom: 20px;
-        //padding-top: 139px;
-        position: relative;
+        margin-bottom: 20px;  
         max-width: 586px;
         margin: 0 auto 20px;
+        
+    }
+    &__title-before{
+        position: relative;
         &::before {
             content: '';
             position: absolute;
             background-image: url(../images//AfterBefore//quality-circle.svg);
             background-repeat: no-repeat;
             background-position: center;
-            width: 55px;
-            height: 55px;
-            left:10px;
-            top: -10px;
+            width: 65px;
+            height: 63px;
+            left: -37px;
+            top: -19px;
+
         }
     }
     &__title-text {
@@ -1556,6 +1570,7 @@ body._touch .menu__list>.list__icon {
             width: 100%;
             transition: all 0.3s ease 0s;
             background-color: #2FAF68;
+            border-radius: 15px;
         }
         &::before,
         &::after {
@@ -1693,7 +1708,7 @@ body._touch .menu__list>.list__icon {
     .portfolio {
         padding-bottom: 0;
         &__title {
-            max-width: 263px;
+            max-width: 270px;
             line-height: 22px;
             &::before {
                 left: -18px;
