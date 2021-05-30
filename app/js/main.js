@@ -356,6 +356,25 @@ const forms = (state) => {
 
 };
 forms();
+function theme(){
+    const toggleTheme = document.querySelector('.header__toggle-theme');
+    let el =  document.documentElement
+    toggleTheme.addEventListener('click',()=>{
+        if(el.hasAttribute('data-theme')){
+            el.removeAttribute('data-theme', 'dark');
+            localStorage.removeItem('theme')
+        }
+        else{
+            el.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme','dark')
+        }
+        
+    })
+    if(localStorage.getItem('theme')!==null){
+        el.setAttribute('data-theme', 'dark');
+    }
+}
+theme()
 var timeout = 1,
     counters = $('.percent__block__counter-number'),
     percent = $('.percent__block__counter');

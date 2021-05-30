@@ -21,7 +21,7 @@ body::-webkit-scrollbar-thumb{
     border: 1px solid rgb(147, 199, 98);
 }
 a {
-    color: black;
+   
 }
 
 :active,
@@ -57,19 +57,8 @@ a {
     padding: 0 15px;
 }
 
-.title {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 44px;
-    text-align: center;
-    margin-bottom: 135px;
-    color: #2E2E2E;
-}
 
-.text-medium {
-    text-align: center;
-    color: #989898;
-}
+
 
 .portfolio__tab--active {
     transition: all 0.5s ease;
